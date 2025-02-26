@@ -1,17 +1,31 @@
-//initialising a variable name data
+let dataValue = 0;
 
-let data = 0;
+// Function to update UI
+const updateUI = (value) => {
+    document.getElementById("counting").innerText = value;
+};
 
-//printing default value of data that is 0 in h2 tag
-document.getElementById("counting").innerText = data;
+// Event listeners for buttons
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("increment-btn").addEventListener("click", () => {
+        dataValue += 5;
+        updateUI(dataValue);
+    });
 
-//creation of increment function
-function increment() {
-	data = data + 1;
-	document.getElementById("counting").innerText = data;
-}
-//creation of decrement function
-function decrement() {
-	data = data - 1;
-	document.getElementById("counting").innerText = data;
-}
+    document.getElementById("decrement-btn").addEventListener("click", () => {
+        if (dataValue >= 5) { // Prevent negative values
+            dataValue -= 5;
+            updateUI(dataValue);
+        }
+    });
+
+    document.getElementById("addTen-btn").addEventListener("click", () => {
+        dataValue += 10;
+        updateUI(dataValue);
+    });
+
+    document.getElementById("reset-btn").addEventListener("click", () => {
+        dataValue = 0;
+        updateUI(dataValue);
+    });
+});
