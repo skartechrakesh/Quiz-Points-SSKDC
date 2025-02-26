@@ -1,51 +1,135 @@
-/*apply css properties to body tag*/
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
+/* Full-page background with a soft gradient */
 body {
-	position: absolute;
-	left: 0%;
-	text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #333;
+    text-align: center;
+    transition: background 0.5s ease-in-out;
 }
 
-/*apply css properties to container class*/
-
-.container {
-	justify-content: center;
-	align-items: center;
-	display: flex;
-	height: 100%;
-	text-align: center;
-}
-
-/*apply css properties to button tag*/
-
-button {
-	width: 90px;
-	height: 60px;
-	font-size: 30px;
-	background-color: green;
-	color: honeydew;
-}
-
-/*apply hover effect to button tag*/
-
-button:hover {
-	background-color: greenyellow;
-	color: grey;
-}
-
-/*apply css properties to h2 tag*/
-
-h2 {
-	color: black;
-	margin: 0 50px;
-	font-size: 45px;
-}
-
-/*apply css properties to h1 tag*/
-
+/* Title Styling */
 h1 {
-	font-size: 35px;
-	color: green;
-	text-align: center;
-	padding-left: 10%;
+    font-size: clamp(45px, 7vw, 90px);
+    font-weight: 700;
+    color: #4a0472;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+/* Counter Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    width: 85%;
+    max-width: 700px;
+    min-width: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Counter Display */
+h2 {
+    font-size: clamp(70px, 9vw, 160px);
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 30px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+}
+
+/* Button Styles */
+button {
+    width: 55%;
+    max-width: 220px;
+    min-width: 160px;
+    height: 80px;
+    font-size: 28px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Individual Button Colors */
+#increment-btn {
+    background: linear-gradient(135deg, #42e695 0%, #3bb2b8 100%);
+    color: white;
+}
+
+#decrement-btn {
+    background: linear-gradient(135deg, #ff7eb3 0%, #ff758c 100%);
+    color: white;
+}
+
+#addTen-btn {
+    background: linear-gradient(135deg, #4286f4 0%, #373B44 100%);
+    color: white;
+}
+
+#reset-btn {
+    background: linear-gradient(135deg, #ffcf71 0%, #ff9f1a 100%);
+    color: black;
+}
+
+/* Button Hover Effects */
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Mobile View */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 50px;
+    }
+
+    h1 {
+        font-size: 70px;
+    }
+
+    h2 {
+        font-size: 120px;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        height: 100px;
+        font-size: 30px;
+    }
 }
